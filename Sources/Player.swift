@@ -310,6 +310,8 @@ open class Player: UIViewController {
     
     //Boolean that determines if the user or calling coded has trigged autoplay manually.
     internal var _hasAutoplayActivated: Bool = true
+
+    internal var _playerRate: Float = 1.0
     
     // MARK: - object lifecycle
 
@@ -395,10 +397,11 @@ open class Player: UIViewController {
     }
     
     fileprivate func play() {
-        if autoplay || _hasAutoplayActivated {
-            self.playbackState = .playing
-            self._avplayer.play()
-        }
+        self.play(atRate: self._playerRate)
+//        if autoplay || _hasAutoplayActivated {
+//            self.playbackState = .playing
+//            self._avplayer.play()
+//        }
     }
 
     /// Pauses playback of the media.

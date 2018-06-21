@@ -49,6 +49,7 @@ extension Player {
     ///
     /// - Parameter atRate: 再生レート
     internal func play(atRate: Float) {
+        self._playerRate = atRate
         if autoplay || _hasAutoplayActivated {
             self.playbackState = .playing
             if #available(iOS 10.0, *) {
