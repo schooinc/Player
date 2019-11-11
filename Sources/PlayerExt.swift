@@ -31,7 +31,7 @@ extension Player {
     /// - Parameter atRate: 再生レート
     open func playFromBeginning(atRate: Float) {
         self.playbackDelegate?.playerPlaybackWillStartFromBeginning(self)
-        self._avplayer.seek(to: kCMTimeZero)
+        self._avplayer.seek(to: CMTime.zero)
         self.playFromCurrentTime(atRate: atRate)
     }
 
